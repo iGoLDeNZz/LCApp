@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67ACA0A6A92C79D0B3A97533 /* Pods_LCApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804C98D58C20D8E7230498F6 /* Pods_LCApp.framework */; };
 		DF72C2362172C6CC006AEE0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF72C2352172C6CC006AEE0D /* AppDelegate.swift */; };
 		DF72C2382172C6CC006AEE0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF72C2372172C6CC006AEE0D /* ViewController.swift */; };
 		DF72C23B2172C6CC006AEE0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF72C2392172C6CC006AEE0D /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12086BAABD3897D5F8EDC074 /* Pods-LCApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCApp/Pods-LCApp.release.xcconfig"; sourceTree = "<group>"; };
+		804C98D58C20D8E7230498F6 /* Pods_LCApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD3F25D02BD9471F89A16FD8 /* Pods-LCApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCApp/Pods-LCApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DF72C2322172C6CC006AEE0D /* LCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF72C2352172C6CC006AEE0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF72C2372172C6CC006AEE0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67ACA0A6A92C79D0B3A97533 /* Pods_LCApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0894A578A0511FDA7B6C6EC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD3F25D02BD9471F89A16FD8 /* Pods-LCApp.debug.xcconfig */,
+				12086BAABD3897D5F8EDC074 /* Pods-LCApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9317E58A3DC337B533F0B371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				804C98D58C20D8E7230498F6 /* Pods_LCApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF72C2292172C6CC006AEE0D = {
 			isa = PBXGroup;
 			children = (
 				DF72C2342172C6CC006AEE0D /* LCApp */,
 				DF72C2332172C6CC006AEE0D /* Products */,
+				0894A578A0511FDA7B6C6EC2 /* Pods */,
+				9317E58A3DC337B533F0B371 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF72C2442172C6CD006AEE0D /* Build configuration list for PBXNativeTarget "LCApp" */;
 			buildPhases = (
+				E29F8ECAACB51F136CA86700 /* [CP] Check Pods Manifest.lock */,
 				DF72C22E2172C6CC006AEE0D /* Sources */,
 				DF72C22F2172C6CC006AEE0D /* Frameworks */,
 				DF72C2302172C6CC006AEE0D /* Resources */,
+				EF4778B83F8469DB389312EB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E29F8ECAACB51F136CA86700 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LCApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF4778B83F8469DB389312EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LCApp/Pods-LCApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LCApp/Pods-LCApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DF72C22E2172C6CC006AEE0D /* Sources */ = {
@@ -280,14 +353,12 @@
 		};
 		DF72C2452172C6CD006AEE0D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD3F25D02BD9471F89A16FD8 /* Pods-LCApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LCApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LawClub.LCApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -297,14 +368,12 @@
 		};
 		DF72C2462172C6CD006AEE0D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12086BAABD3897D5F8EDC074 /* Pods-LCApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LCApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LawClub.LCApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
