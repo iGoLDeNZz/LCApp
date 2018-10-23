@@ -25,6 +25,8 @@
 		529B9B9421720349003B42AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529B9B9321720349003B42AF /* Assets.xcassets */; };
 		529B9B9721720349003B42AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529B9B9521720349003B42AF /* LaunchScreen.storyboard */; };
 		529B9B9F21720A4F003B42AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 529B9B9E21720A4F003B42AF /* GoogleService-Info.plist */; };
+		DFCB4D4D217F603100950FF2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB4D4C217F603100950FF2 /* Event.swift */; };
+		DFCB4D4F217F690000950FF2 /* Publication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCB4D4E217F690000950FF2 /* Publication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		529B9B9621720349003B42AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		529B9B9821720349003B42AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		529B9B9E21720A4F003B42AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DFCB4D4C217F603100950FF2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		DFCB4D4E217F690000950FF2 /* Publication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publication.swift; sourceTree = "<group>"; };
 		EC2E32A7CD21C5895A57D786 /* Pods_LCApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				5271E79B21767D8200472D14 /* account.swift */,
+				DFCB4D4C217F603100950FF2 /* Event.swift */,
+				DFCB4D4E217F690000950FF2 /* Publication.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,12 +297,14 @@
 				5283C7A2217B0EE90080C040 /* RegisterVC.swift in Sources */,
 				5271E79A21767D5500472D14 /* InitialVC.swift in Sources */,
 				5271E79C21767D8200472D14 /* account.swift in Sources */,
+				DFCB4D4F217F690000950FF2 /* Publication.swift in Sources */,
 				5271E79E217680BD00472D14 /* homeVC.swift in Sources */,
 				52123E59217B62EB00A8EE21 /* profileVC.swift in Sources */,
 				529B9B8F21720344003B42AF /* ViewController.swift in Sources */,
 				5283C7A7217B0F1C0080C040 /* RoundedBtn.swift in Sources */,
 				529B9B8D21720344003B42AF /* AppDelegate.swift in Sources */,
 				5283C7A3217B0EE90080C040 /* LogInVC.swift in Sources */,
+				DFCB4D4D217F603100950FF2 /* Event.swift in Sources */,
 				52123E5B217B631B00A8EE21 /* outAccountsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

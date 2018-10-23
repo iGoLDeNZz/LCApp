@@ -8,7 +8,7 @@
 
 import Foundation
 class account{
-    var _accountType:String! // (Admin / user) account
+    var _accountType:String! //(Admin/user) account
     var _email:String!
     var _pass:String!
     var _uid : String!
