@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class homeVC: UIViewController {
     
@@ -18,6 +19,10 @@ class homeVC: UIViewController {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         hideMenu()
+        
+//        if let user = Auth.auth().currentUser {
+//            self.performSegue(withIdentifier: "profileVC", sender: nil)
+//        }
         // Do any additional setup after loading the view.
     }
 
@@ -60,8 +65,11 @@ class homeVC: UIViewController {
     }
     @IBAction func profileBtnPressed(_ sender: Any) {
         hideMenu()
-        self.performSegue(withIdentifier: "profileVC", sender: nil)
-        
+        if UserDefaults.standard.bool(forKey: "logedInFK"){
+            self.performSegue(withIdentifier: "profileVC", sender: nil )
+        }else{
+            self.performSegue(withIdentifier: "loginVC", sender: nil)
+        }
     }
     @IBAction func ourAccountsBtnPressed(_ sender: Any) {
         hideMenu()

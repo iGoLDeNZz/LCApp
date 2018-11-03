@@ -13,7 +13,7 @@ class LogInVC: UIViewController {
     //Firebase ref
     var dbRef: DatabaseReference = Database.database().reference()
     
-    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var memIDTxt: UITextField!
     @IBOutlet weak var passWordTxt: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
@@ -31,26 +31,20 @@ class LogInVC: UIViewController {
         backBtn.backgroundColor = BackButtenColor
         
         //acctiveity for the signin
-        activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityView = UIActivityIndicatorView(style: .gray)
         activityView.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         activityView.frame = CGRect(x: 0, y: 0, width: 500.0, height: 500.0)
         activityView.center  = CGPoint(x: (view.frame.width/2), y: (view.frame.height/2))
         //        activityView.center = loginBtn.center
+        BGDarkView.isHidden = true
         BGDarkView.addSubview(activityView)
         
         
-        
-        
-        
-        dbRef = Database.database().reference()
-        dbRef.child("accounts").observe( .childAdded, with: { (snapshot) in
-            //            let account = snapshot.
-            //
-        })
-        
         // Do any additional setup after loading the view.
-        emailTxt.text = "yyuu6699@hotmail.com"
-        passWordTxt.text = "4553410"
+        
+        //Testing VV
+        memIDTxt.text = "test1122"
+        passWordTxt.text = "test1122"
         self.loginBtnPressed(self)
     }
     
@@ -66,10 +60,11 @@ class LogInVC: UIViewController {
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         
-        let email = emailTxt.text!
+        var email = memIDTxt.text!
         let password = passWordTxt.text!
         
         if email != "" && password != "" {
+            email = "\(email)@gmail.com"
             self.authAccLogin(email:email,password: password)
         }else {
             //displayErorr (enter username and password)
@@ -80,23 +75,27 @@ class LogInVC: UIViewController {
     func authAccLogin(email:String, password:String){
         self.setLoginAndCancelButton(enabled: false)
         activityView.startAnimating()
+        
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
             if error == nil && user != nil {
                 self.dbRef.child("Accounts").child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value, with: { snapshot in
+    
                     if  let dect = snapshot.value as? [String:Any],
                         let ـaccountType = dect["accountType"] as? String,
                         let _password = dect["passWord"] as? String,
                         let _email = dect["email"] as? String,
-                        
                         let _uid = dect["uid"] as? String
                     {
+
                         let accountOfTheUser:account! = account.init(accountType:ـaccountType,email: _email ,pass: _password, uid : _uid)
-                        
-  
+                    
+                        //set default value
+                        setUserDeafultFK(boolVal: true,Acc: accountOfTheUser)
+                       
                         self.activityView.stopAnimating()
                         self.setLoginAndCancelButton(enabled: true)
-                        
-                        self.performSegue(withIdentifier: "HomeVC", sender: accountOfTheUser)
+                        self.dismiss(animated: true, completion: nil)
+//                        self.performSegue(withIdentifier: "profileVC", sender: accountOfTheUser)
                     }
                 })
             } else {

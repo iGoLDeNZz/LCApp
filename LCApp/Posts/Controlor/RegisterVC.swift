@@ -43,7 +43,7 @@ class RegesterVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         CancelBtn.backgroundColor = BackButtenColor
         
         //acctiveity for the Register
-        activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityView = UIActivityIndicatorView(style: .gray)
         activityView.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         activityView.frame = CGRect(x: 0, y: 0, width: 500.0, height: 500.0)
         activityView.center  = CGPoint(x: (view.frame.width/2), y: (view.frame.height/2))
@@ -189,7 +189,7 @@ class RegesterVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        
-            TypeBtn.setTitle(String(TypesArr[row]), for: UIControlState.normal)
+            TypeBtn.setTitle(String(TypesArr[row]), for: UIControl.State.normal)
             TypeVal = String(TypesArr[row])
             TypePik.isHidden = true
             TypeBtn.isHidden = false

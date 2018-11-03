@@ -198,6 +198,7 @@
 				TargetAttributes = {
 					529B9B8821720344003B42AF = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -453,7 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LawClub.LCApp.LCApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -474,7 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LawClub.LCApp.LCApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
