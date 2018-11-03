@@ -9,8 +9,9 @@
 import UIKit
 
 class homeVC: UIViewController {
-    var myEvents = [Event!]()
-    var _account:account = account.init(accountType: "", email: "", pass: "", uid: "", attendedEvents: myEvents)
+    
+    var _account:account = account.init(accountType: "", email: "", pass: "", uid: "")
+    
     @IBOutlet weak var screenCoverdBtn: UIButton!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var CurveImageView: UIImageView!

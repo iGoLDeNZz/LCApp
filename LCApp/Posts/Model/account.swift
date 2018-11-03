@@ -15,11 +15,11 @@ class account{
     var _attendedEvents: [Event]!
     //Exta information VV (name , ...)
     
-    init(accountType:String,email:String,pass:String!, uid : String, attendedEvents:[Event]){
-        _accountType = accountType
-        _email = email
-        _pass=pass
-        _uid = uid
-        _attendedEvents = attendedEvents;
+    init(accountType:String,email:String,pass:String!, uid : String){
+        _accountType    = accountType
+        _email          = email
+        _pass           = pass
+        _uid            = uid
+        _attendedEvents = [Event]();
     }
 }
